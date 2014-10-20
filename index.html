@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MOapp">
+<head>
+<meta charset="UTF-8">
+
+<script src="http://localhost:9074/mod/neuron/latest/neuron.js"></script>
+ <script>
+     neuron.config({
+         path:"http://localhost:9074/mod"
+     })
+ </script>
+</head>
+<body> 
+
+<div ng-view></div>
+<script>
+facade({
+  mod: 'app-mo-static'
+});
+</script>
+</body>
+
+</html>

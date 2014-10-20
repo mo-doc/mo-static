@@ -1,0 +1,8 @@
+<img ng-src="{{image}}" class="phone">
+{{title}}
+<ul class="phone-thumbs">
+  <li ng-repeat="img in phone.images">
+    <img ng-src="{{img}}" ng-click="setImage(img)">
+  </li>
+</ul>
+<div hello-world></div>

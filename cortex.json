@@ -1,0 +1,39 @@
+{
+  "name": "app-mo-static",
+  "version": "0.1.0",
+  "description": "The coolest cortex module.",
+  "main": "index.js",
+  "repository": "git://github.com/mo-doc/mo-static.git",
+  "keywords": [
+    "doc",
+    "mobile"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "yuanxiang.yang",
+    "email": "yuanxiang.yang@dianping.com"
+  },
+  "bugs": {
+    "url": "http://github.com/mo-doc/mo-static/issues"
+  },
+  "homepage": "http://github.com/mo-doc/mo-static",
+  "engines": {
+    "neuron": "*"
+  },
+  "devDependencies": {
+    "assert": "*"
+  },
+  "dependencies": {
+    "zepto-wepp": "~1.1.1",
+    "wepp-module-toast": "~0.1.0"
+  },
+  "scripts": {
+    "prebuild": "gulp"
+  },
+  "directories": {
+    "css": "static/"
+  },
+  "entries": [
+    "./app/**/*.js"
+  ]
+}
