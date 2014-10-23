@@ -6,6 +6,9 @@ gulp.task('less',function(){
     gulp.src('./static/less/style.less')
     .pipe(less())
     .pipe(gulp.dest('./static/css/'));
+
+    gulp.src('./static/less/img/**/*.*')
+     .pipe(gulp.dest('./static/img'));
 });
 
 gulp.task('watch','',function(){

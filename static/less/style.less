@@ -2,12 +2,38 @@
 @import "lib/bootstrap.less";
 
 .header{
-	padding:15px;
-	.input-append{
-		float: right;
-		margin-bottom: 0px;
-		padding-top:5px;
-	}
+		padding:15px;
+		.navbar-inner {
+			.search{
+				float: right;
+				padding-top:5px;
+				position: relative;
+					input{
+						margin-bottom: 0px;
+						padding-left: 30px;
+						border: 0px;
+						width: 206px;
+						background: rgba(255,255,255,0.5);
+						-webkit-transition-property: background,width;
+						-moz-transition-property: background,width;
+						-o-transition-property: background,width;
+						transition-property:background,width;
+						-webkit-transition-duration: 300ms;
+						-moz-transition-duration: 300ms;
+						-o-transition-duration: 300ms;
+						transition-duration:300ms;
+					}
+					input:focus{
+							width: 300px;
+							background: #fff;
+						}
+					.icon-search{
+						position: absolute;
+						left: 9px;
+						top: 10px;
+					}
+			}
+		}	
 }
 .content{
 	padding: 0px 15px;
