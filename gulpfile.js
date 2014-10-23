@@ -3,7 +3,7 @@ var less = require('gulp-less');
 var watch = require('gulp-watch');
 
 gulp.task('less',function(){
-    gulp.src('./static/less/style.less')
+    gulp.src('./static/less/*.less')
     .pipe(less())
     .pipe(gulp.dest('./static/css/'));
 
