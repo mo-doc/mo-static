@@ -2,7 +2,7 @@ MOapp.compileProvider.directive('moNav', function($http) {
 	return {
 	    restrict: 'AE',
 	    replace: true,
-	    templateUrl: "./app/common/template/nav.html",
+	    templateUrl: "./app/dep/common/template/nav.html",
 	    link: function($scope,elem,attr){
 			$http({
 				method:"GET",
@@ -10,9 +10,10 @@ MOapp.compileProvider.directive('moNav', function($http) {
 			}).success(function(data,status,headers,config){
 
 			}).error(function(data,status,headers,config){
-				data={
-					util:[
-						{
+				data=[
+					{
+					"classify":"util",
+					"list":[{
 							id:1,
 							name:"util-m-floatbar"
 						},
@@ -20,18 +21,25 @@ MOapp.compileProvider.directive('moNav', function($http) {
 							id:2,
 							name:"wepp-mobule"
 						}
-					],
-					base:[{
-						id:3,
-						name:"base-m-css"
-					}],
-					service:[{
-						id:4,
-						name:"app-m-server"
-					}]
-				}
+					]},
+					{
+					"classify":"base",
+					"list":[
+						{
+							id:3,
+							name:"base-m-css"
+						}
+					]},
+					{
+					"classify":"server",
+					"list":[
+						{
+							id:4,
+							name:"app-m-server"
+						}
+					]}
+				];
 				$scope.data = data;
-				$scope.title = "test";
 			});		
 
 	    }

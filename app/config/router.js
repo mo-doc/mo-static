@@ -4,6 +4,6 @@ module.exports = [
 		"css":"",
 		"name":"index",
 		"page":"index",
-		"dep":['./app/dep/common/nav']
+		"dep":['./app/dep/common/nav','./app/dep/filter/classify']
 	}
 ]

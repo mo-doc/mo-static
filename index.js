@@ -39,21 +39,13 @@ config(['$routeProvider','$compileProvider', function($routeProvider,$compilePro
                 }
 
                 item.page ? require.async(item.page.indexOf("/")!=-1 ? item.page : "./app/model/"+item.page+"/controller",function(){loaded();}) :loaded();
-
                 return $defer.promise;
-
             }
           }
       })
   });
 }]);
 
-
-MOapp.filter('odditems',function(){
-    return function(value){
-        return 1;
-    }
-});
 
 
 

@@ -2,13 +2,13 @@
     <div ng-repeat="group in data" class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle" data-parent="#accordion-896714" href="#accordion-element-switch">
-            	{{}}
+                {{group.classify | classify}}
             </a>
         </div>
         <div id="accordion-element-switch" class="accordion-body collapse in">
             <div class="accordion-inner">
                 <ul class="nav nav-list">
-                    <li ng-repeat="item in group">
+                    <li ng-repeat="item in group.list">
                         <a>
                         	{{item.name}}
                         </a>
