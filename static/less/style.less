@@ -1,3 +1,43 @@
-body{
-	font-size:12px;
+
+@import "lib/bootstrap.less";
+
+.header{
+	padding:15px;
+	.form-search{
+		float: right;
+		padding-top:5px;
+	}
+	.login-in{
+		float: right;
+		padding-top:5px;
+	}
+}
+.content{
+	padding: 0px 15px;
+	overflow: hidden;
+	.accordion-heading{
+		background: #f5f5f5;
+	}
+	.content-tab{
+		width: 23%;
+		float: left;
+	}
+	.content-box{
+		width: 75%;
+		float: right;
+	}
+	table{
+		width: 90%;
+		.title{
+			font-weight: 800;
+			td{
+				white-space:nowrap; 
+				padding-right: 30px;
+				text-align: center;
+			}
+		}
+	}
+	pre{
+		width: 83%;
+	}
 }
