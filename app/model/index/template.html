@@ -1,8 +1,55 @@
-<img ng-src="{{image}}" class="phone">
-{{title}}
-<ul class="phone-thumbs">
-  <li ng-repeat="img in phone.images">
-    <img ng-src="{{img}}" ng-click="setImage(img)">
-  </li>
-</ul>
-<div hello-world></div>
+<div class="header">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+          <a class="brand" href="#">MO</a>
+          <ul class="nav">
+            <li class="active"><a href="#">首页</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+          <div class="input-append">
+            <input class="span2" id="appendedInputButton" type="text">
+            <button class="btn" type="button">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="content">
+      <!-- 导航栏 -->
+      <div mo-nav></div>
+
+      <!-- 放内容的 -->
+      <div class="content-box">
+        <div class="items" id="#aaa">
+            <h1>aaaa</h1>
+            <p>aaaa是什么类我也不知道</p>
+            <ul>
+              <li>aaaa</li>
+              <li>aaaa</li>
+              <li>aaaa</li>
+            </ul>
+            <h3>aaaa.bbbb</h3>
+            <table class="table table-bordered">
+                <tr class="title">
+                  <td class="active">打发</td>
+                  <td class="success">违法</td>
+                  <td class="warning">撒旦</td>
+                </tr>
+                <tr>
+                  <td class="active">打发</td>
+                  <td class="success">违法</td>
+                  <td class="warning">阿萨德发生的飞机啊上帝；立法近代史；放假啊可是地方；阿里山的风景啊；路上的风景；阿多煞风景啊；老师大家； </td>
+                </tr>
+            </table>
+            <pre>
+              function aa(){
+                 ...
+              }
+            </pre>
+            标签<code>a</code>，ga g
+        </div>
+
+     </div>
+    </div>

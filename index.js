@@ -46,13 +46,16 @@ config(['$routeProvider','$compileProvider', function($routeProvider,$compilePro
           }
       })
   });
-
-
-
-
-
-
 }]);
+
+
+MOapp.filter('odditems',function(){
+    return function(value){
+        return 1;
+    }
+});
+
+
 
 
 
