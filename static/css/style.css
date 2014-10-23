@@ -5213,12 +5213,9 @@ a.badge:focus {
 .header {
   padding: 15px;
 }
-.header .form-search {
+.header .input-append {
   float: right;
-  padding-top: 5px;
-}
-.header .login-in {
-  float: right;
+  margin-bottom: 0px;
   padding-top: 5px;
 }
 .content {
