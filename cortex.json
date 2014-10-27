@@ -23,10 +23,6 @@
   "devDependencies": {
     "assert": "*"
   },
-  "dependencies": {
-    "zepto-wepp": "~1.1.1",
-    "wepp-module-toast": "~0.1.0"
-  },
   "scripts": {
     "prebuild": "gulp"
   },
