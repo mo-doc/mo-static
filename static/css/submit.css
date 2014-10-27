@@ -5271,16 +5271,16 @@ a.badge:focus {
 .content pre {
   width: 83%;
 }
-.content-box {
-  width: 100% !important;
-  float: none !important;
+.submit-box {
+  width: 100%;
+  float: none;
 }
-.content-box h5 {
+.submit-box h5 {
   padding: 8px 0px;
   margin-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
 }
-.content-box textarea {
+.submit-box textarea {
   width: 720px;
   height: 260px;
 }
