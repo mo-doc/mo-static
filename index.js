@@ -1,22 +1,31 @@
 // 加载源框架
 require("./app/lib/angular");
+require("./app/lib/router");
 var loadCss = require("./app/util/loadcss");
 var config = require("./app/config/router");
-var $ = require("zepto-wepp");
 
-window.MOapp = angular.module('MOapp',[]).
-config(['$routeProvider','$compileProvider', function($routeProvider,$compileProvider) {
+// page template cache
+var _Template = {};
 
+
+window.MOapp = angular.module('MOapp',['ngRoute']).
+config(['$routeProvider','$compileProvider','$filterProvider', function($routeProvider,$compileProvider,$filterProvider) {
+
+  // lazyload directive
   MOapp.compileProvider    = $compileProvider;
 
-  $.each(config,function(index,item){
+  // lazyload filter
+  MOapp.filterProvider = $filterProvider;
+
+
+  // roouter config
+ angular.forEach(config,function(item,index){
       $routeProvider.when(item.url, {
-          templateUrl: './app/model/'+item.name+'/template.html',
           controller:"MO"+item.name.replace(/^./,function(match){return match.toUpperCase()}),
+          // before display view, load controller and dep,css
+          templateUrl:'./app/model/'+item.name+'/template.html',
           resolve:{
-            delay:function($q,$timeout){
-
-
+            delay:function($q,$timeout,$route){
                 var $defer = $q.defer();
 
                 var requireNum = parseInt(item.count || 2 ) + (item.js ? item.js.length : 0);
@@ -33,12 +42,15 @@ config(['$routeProvider','$compileProvider', function($routeProvider,$compilePro
                 }):loaded();
 
                 if(item.dep){
-                  $.each(item.dep,function(index,it){
+                  angular.forEach(item.dep,function(it,index){
                       require.async(it,function(){loaded});
                   })
                 }
-
-                item.page ? require.async(item.page.indexOf("/")!=-1 ? item.page : "./app/model/"+item.page+"/controller",function(){loaded();}) :loaded();
+                item.page ? require.async(item.page.indexOf("/")!=-1 ? item.page : "./app/model/"+item.page+"/controller",function(template){
+                  $route.routes["/index"].$template= template;                  
+                  loaded();
+                }) :loaded();
+                
                 return $defer.promise;
             }
           }

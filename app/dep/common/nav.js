@@ -1,8 +1,9 @@
+
 MOapp.compileProvider.directive('moNav', function($http) {
 	return {
 	    restrict: 'AE',
 	    replace: true,
-	    templateUrl: "./app/dep/common/template/nav.html",
+	    template: require("./template/nav.html"),
 	    link: function($scope,elem,attr){
 			$http({
 				method:"GET",
@@ -10,7 +11,7 @@ MOapp.compileProvider.directive('moNav', function($http) {
 			}).success(function(data,status,headers,config){
 
 			}).error(function(data,status,headers,config){
-				data=[
+				var nav=[
 					{
 					"classify":"util",
 					"list":[{
@@ -39,7 +40,9 @@ MOapp.compileProvider.directive('moNav', function($http) {
 						}
 					]}
 				];
-				$scope.data = data;
+
+				$scope.nav = nav;
+
 			});		
 
 	    }

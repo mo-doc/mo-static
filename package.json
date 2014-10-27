@@ -20,6 +20,7 @@
   "devDependencies": {
     "gulp-less": "~1.2.3",
     "gulp-watch":"~0.6.5",
-    "gulp": "~3.6.2"
+    "gulp": "~3.6.2",
+    "gulp-tpl2mod": "~0.1.1"
   }
 }

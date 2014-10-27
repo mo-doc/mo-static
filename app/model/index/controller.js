@@ -1,5 +1,5 @@
-window.MOIndex = function($scope,$filter){
-	console.log("controller");
-  	$scope.title = "test-yyy";
-  	console.log($filter);
+window.MOIndex = function($scope,$route){
+	
 }
+
+module.exports = require("./template.html");
