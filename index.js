@@ -8,7 +8,10 @@ var ENV = window.ENV ;
 
 // 路径配置
 window.MOapp = angular.module('MOapp',['ngRoute']).
-config(['$routeProvider','$compileProvider','$filterProvider', function($routeProvider,$compileProvider,$filterProvider) {
+config(['$routeProvider','$compileProvider','$filterProvider','$httpProvider', function($routeProvider,$compileProvider,$filterProvider,$httpProvider) {
+
+  $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+
 
   // lazyload directive
   MOapp.compileProvider    = $compileProvider;

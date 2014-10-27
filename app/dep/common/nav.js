@@ -8,9 +8,9 @@ MOapp.compileProvider.directive('moNav', function($http,$compile) {
 	    link: function($scope,elem,attr){
 			$http({
 				method:"GET",
-				url:"/dsafdasfad"
+				url:"/api/component/listbyclassify"
 			}).success(function(data,status,headers,config){
-
+				$scope.nav = data || [];
 			}).error(function(data,status,headers,config){
 				var nav=[
 					{
