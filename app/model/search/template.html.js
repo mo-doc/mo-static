@@ -1,0 +1,1 @@
+module.exports='<!-- header --><div class="header" mo-header></div><!-- content --><div class="content"><!-- 放内容的 --><div class="content-box"><h5>Search Result</h5><ul class="result-list"><li><a href="#/detail/test">bootstrap(css,js)</a></li><li><a href="#/detail/test">bootstrap(css,js)</a></li></ul></div></div>'

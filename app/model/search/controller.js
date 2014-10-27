@@ -1,4 +1,4 @@
-window.MOIndex = function($scope,$route){
+window.MOSearch = function($scope,$route){
 	
 }
 

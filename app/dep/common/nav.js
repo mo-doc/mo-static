@@ -1,3 +1,4 @@
+require("../filter/classify");
 
 MOapp.compileProvider.directive('moNav', function($http) {
 	return {

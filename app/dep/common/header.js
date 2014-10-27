@@ -7,7 +7,7 @@ MOapp.compileProvider.directive('moHeader', function($location) {
 	    link: function($scope,elem,attr){
 	    	$scope.search = function($event){
 	    		if(parseInt($event.keyCode) == 13){
-	    			debugger
+	    			$location.path("search/"+$scope.searchVal);
 	    		}
 	    	}
 	    }

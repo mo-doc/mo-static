@@ -1,5 +1,5 @@
-window.MOIndex = function($scope,$route){
-	
+window.MOdetail = function($scope,$route){
+  
 }
 
 // module.exports = require("./template.html");
