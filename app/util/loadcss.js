@@ -6,7 +6,7 @@ module.exports = function(url,callback){
     var assetOnload = function(node,cb){
         setTimeout(function(){
             cb.call(node);
-        }, 100);
+        }, 0);
     }
 
     callback && assetOnload(node, callback);
