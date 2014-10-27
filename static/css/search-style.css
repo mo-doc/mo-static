@@ -5271,16 +5271,16 @@ a.badge:focus {
 .content pre {
   width: 83%;
 }
-.content-box {
-  width: 100% !important;
-  float: none !important;
+.search-result-box {
+  width: 100%;
+  float: none;
 }
-.content-box h5 {
+.search-result-box h5 {
   padding: 8px 0px;
   margin-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
 }
-.content-box .search-item {
+.search-result-box .search-item {
   padding-left: 20px;
   position: relative;
   display: block;
@@ -5293,7 +5293,7 @@ a.badge:focus {
   border-top: 0px;
   border-bottom: 0px;
 }
-.content-box .flie-icon {
+.search-result-box .flie-icon {
   position: absolute;
   left: 6px;
   top: 12px;
@@ -5302,14 +5302,14 @@ a.badge:focus {
   width: 10px;
   height: 13px;
 }
-.content-box .result-list {
+.search-result-box .result-list {
   list-style: none;
 }
-.content-box .result-list li {
+.search-result-box .result-list li {
   padding: 5px 0px;
   border-bottom: 1px solid #eee;
   margin-right: 25px;
 }
-.content-box .result-list li a {
+.search-result-box .result-list li a {
   text-decoration: none;
 }
