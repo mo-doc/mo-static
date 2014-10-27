@@ -1,30 +1,29 @@
+var ENV = window.ENV;
+
 module.exports = [
 	{
+		"url":"/detail/:name",
+		"css":ENV+"static/css/style.css",
+		"name":"detail",
+		"dep":['./app/dep/common/nav','./app/dep/common/header']
+	},
+	{
 		"url":"/index",
-		"css":"http://localhost:9074/mod/app-mo-static/latest/static/css/style.css",
+		"css":ENV+"static/css/style.css",
 		"name":"index",
-		"page":"index",
 		"dep":['./app/dep/common/nav','./app/dep/common/header']
 	},
 	{
 		"url":"/search/:keyword",
-		"css":"http://localhost:9074/mod/app-mo-static/latest/static/css/search-style.css",
+		"css":ENV+"static/css/search-style.css",
 		"name":"search",
-		"page":"search",
 		"dep":['./app/dep/common/header']
 	},
 	{
 		"url":"/add",
-		"css":"http://localhost:9074/mod/app-mo-static/latest/static/css/submit.css",
+		"css":ENV+"static/css/submit.css",
 		"name":"add",
-		"page":"add",
 		"dep":['./app/dep/common/header']
-	},
-	{
-		"url":"/detail/:name",
-		"css":"http://localhost:9074/mod/app-mo-static/latest/static/css/index.css",
-		"name":"detail",
-		"page":"detail",
-		"dep":['./app/dep/common/header','./app/dep/common/nav']
 	}
+	
 ]

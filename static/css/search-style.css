@@ -5287,7 +5287,7 @@ a.badge:focus {
   line-height: 39px;
   margin-bottom: 20px;
   width: 95%;
-  background: url(../img/search-bg.png);
+  background: url(img/search-bg.png);
   text-decoration: none;
   border: 1px solid #cccccc;
   border-top: 0px;
@@ -5297,7 +5297,7 @@ a.badge:focus {
   position: absolute;
   left: 6px;
   top: 12px;
-  background: url(../img/flie-icon.png) no-repeat;
+  background: url(img/flie-icon.png) no-repeat;
   display: block;
   width: 10px;
   height: 13px;

@@ -1,6 +1,6 @@
 require("../filter/classify");
 
-MOapp.compileProvider.directive('moNav', function($http) {
+MOapp.compileProvider.directive('moNav', function($http,$compile) {
 	return {
 	    restrict: 'AE',
 	    replace: true,

@@ -3,11 +3,10 @@ require("./app/lib/angular");
 require("./app/lib/router");
 var loadCss = require("./app/util/loadcss");
 var config = require("./app/config/router");
-
-// page template cache
-var _Template = {};
+var ENV = window.ENV ;
 
 
+// 路径配置
 window.MOapp = angular.module('MOapp',['ngRoute']).
 config(['$routeProvider','$compileProvider','$filterProvider', function($routeProvider,$compileProvider,$filterProvider) {
 
@@ -17,13 +16,12 @@ config(['$routeProvider','$compileProvider','$filterProvider', function($routePr
   // lazyload filter
   MOapp.filterProvider = $filterProvider;
 
-
   // roouter config
  angular.forEach(config,function(item,index){
       $routeProvider.when(item.url, {
           controller:"MO"+item.name.replace(/^./,function(match){return match.toUpperCase()}),
           // before display view, load controller and dep,css
-          templateUrl:'./app/model/'+item.name+'/template.html',
+          template:'<div compile="html"></div>',
           resolve:{
             delay:function($q,$timeout,$route){
                 var $defer = $q.defer();
@@ -46,8 +44,7 @@ config(['$routeProvider','$compileProvider','$filterProvider', function($routePr
                       require.async(it,function(){loaded});
                   })
                 }
-                item.page ? require.async(item.page.indexOf("/")!=-1 ? item.page : "./app/model/"+item.page+"/controller",function(template){
-                  $route.routes["/index"].$template= template;                  
+                item.name ? require.async(item.name.indexOf("/")!=-1 ? item.page : "./app/model/"+item.name+"/controller",function(template){
                   loaded();
                 }) :loaded();
                 
@@ -57,6 +54,26 @@ config(['$routeProvider','$compileProvider','$filterProvider', function($routePr
       })
   });
 }]);
+
+
+// 模板解析
+MOapp.directive('compile', function($compile) {
+
+  return function(scope, element, attrs) {
+    scope.$watch(
+      function(scope) {
+        // watch the 'compile' expression for changes
+        return scope.$eval(attrs.compile);
+      },
+      function(value) {
+
+        element.html(value);
+
+        $compile(element.contents())(scope);
+      }
+    );
+  };
+});
 
 
 
