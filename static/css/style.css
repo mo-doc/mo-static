@@ -5244,7 +5244,7 @@ a.badge:focus {
   top: 10px;
 }
 .content {
-  margin: 0px 15px;
+  margin: 0px 15px 100px;
   overflow: hidden;
 }
 .content .accordion-heading {
@@ -5271,10 +5271,6 @@ a.badge:focus {
 }
 .content pre {
   width: 83%;
-}
-h1.ng-scope {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
 }
 .accordion-group {
   margin-bottom: 15px;

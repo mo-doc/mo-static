@@ -25,6 +25,11 @@ module.exports = [
 		"url":"/add",
 		"css":ENV+"static/css/submit.css",
 		"name":"add"
+	},
+	{
+		"url":"/delete",
+		"css":ENV+"static/css/search-style.css",
+		"name":"delete"
 	}
 	
 ]
