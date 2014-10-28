@@ -1,3 +1,6 @@
+require("../../dep/common/header");
+require("../../dep/common/nav");
+
 window.MODetail = function($scope,$route,$http){
 	// 每个controller都要加上view
 	$scope.html = require("./template.html");
@@ -10,7 +13,7 @@ window.MODetail = function($scope,$route,$http){
 	}).success(function(data,status,headers,config){
 		$scope.data = data.length ? data[0] : {};
 	}).error(function(data,status,headers,config){
-		
+
 	});
 
 }

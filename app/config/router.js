@@ -4,20 +4,17 @@ module.exports = [
 	{
 		"url":"/",
 		"css":ENV+"static/css/style.css",
-		"name":"index",
-		"dep":['./app/dep/common/nav','./app/dep/common/header']
+		"name":"index"
 	},
 	{
 		"url":"/detail/:name",
 		"css":ENV+"static/css/style.css",
-		"name":"detail",
-		"dep":['./app/dep/common/nav','./app/dep/common/header']
+		"name":"detail"
 	},
 	{
 		"url":"/index",
 		"css":ENV+"static/css/style.css",
-		"name":"index",
-		"dep":['./app/dep/common/nav','./app/dep/common/header']
+		"name":"index"
 	},
 	{
 		"url":"/search/:keyword",

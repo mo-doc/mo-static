@@ -31,7 +31,7 @@ config(['$routeProvider','$compileProvider','$filterProvider','$httpProvider', f
             delay:function($q,$timeout,$route){
                 var $defer = $q.defer();
 
-                var requireNum = parseInt(item.count || 2 ) + (item.js ? item.js.length : 0);
+                var requireNum = parseInt(item.count || 2 );
 
                 var loaded = function(){
                     requireNum--;
@@ -49,11 +49,11 @@ config(['$routeProvider','$compileProvider','$filterProvider','$httpProvider', f
                     loaded();
                 }
 
-                if(item.dep){
-                  angular.forEach(item.dep,function(it,index){
-                      require.async(it,function(){loaded});
-                  })
-                }
+                // if(item.dep){
+                //   angular.forEach(item.dep,function(it,index){
+                //       require.async(it,function(){loaded});
+                //   })
+                // }
                 item.name ? require.async(item.name.indexOf("/")!=-1 ? item.page : "./app/model/"+item.name+"/controller",function(template){
                   loaded();
                 }) :loaded();

@@ -1,3 +1,5 @@
+require("../../dep/common/header");
+
 window.MOSearch = function($scope,$route,$http){
 	// 每个controller都要加上view
 	$scope.html = require("./template.html");
