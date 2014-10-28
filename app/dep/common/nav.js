@@ -12,38 +12,7 @@ MOapp.compileProvider.directive('moNav', function($http,$compile) {
 			}).success(function(data,status,headers,config){
 				$scope.nav = data || [];
 			}).error(function(data,status,headers,config){
-				var nav=[
-					{
-					"classify":"util",
-					"list":[{
-							id:1,
-							name:"util-m-floatbar"
-						},
-						{
-							id:2,
-							name:"wepp-mobule"
-						}
-					]},
-					{
-					"classify":"base",
-					"list":[
-						{
-							id:3,
-							name:"base-m-css"
-						}
-					]},
-					{
-					"classify":"server",
-					"list":[
-						{
-							id:4,
-							name:"app-m-server"
-						}
-					]}
-				];
-
-				$scope.nav = nav;
-
+				
 			});		
 
 	    }
