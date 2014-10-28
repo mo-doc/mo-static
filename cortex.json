@@ -18,7 +18,7 @@
   },
   "homepage": "http://github.com/mo-doc/mo-static",
   "engines": {
-    "neuron": "*"
+    "neuron": "5.1.1"
   },
   "devDependencies": {
     "assert": "*"
