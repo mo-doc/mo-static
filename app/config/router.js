@@ -2,6 +2,12 @@ var ENV = window.ENV;
 
 module.exports = [
 	{
+		"url":"/",
+		"css":ENV+"static/css/style.css",
+		"name":"index",
+		"dep":['./app/dep/common/nav','./app/dep/common/header']
+	},
+	{
 		"url":"/detail/:name",
 		"css":ENV+"static/css/style.css",
 		"name":"detail",
