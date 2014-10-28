@@ -10,7 +10,7 @@ window.MODetail = function($scope,$route,$http){
 	}).success(function(data,status,headers,config){
 		$scope.data = data.length ? data[0] : {};
 	}).error(function(data,status,headers,config){
-
+		
 	});
 
 }

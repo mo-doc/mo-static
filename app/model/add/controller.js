@@ -22,14 +22,23 @@ window.MOAdd = function($scope,$route,$http){
 				method:"POST",
 				url:"/api/component/add",
 				data:{
-					title:$scope.title,
-					intro:$scope.intro,
-					classify:$scope.classify,
-					keyword:$scope.keyword
-				}
+					title:$scope.title||"",
+					intro:$scope.intro||"",
+					classify:$scope.classify||"",
+					keywords:$scope.keyword||""
+				},
+				transformRequest: function(obj) {
+			        var str = [];
+			        for(var p in obj)
+			        	str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+			        return str.join("&");
+			    },
+				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 			}).success(function(data,status,headers,config){
 				if(data.code == 200){
 					$scope.success = "添加"+$scope.title+"成功";
+				}else{
+					$scope.error = data.msg || "错误";
 				}
 			}).error(function(data,status,headers,config){
 				

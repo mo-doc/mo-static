@@ -5272,6 +5272,10 @@ a.badge:focus {
 .content pre {
   width: 83%;
 }
+h1.ng-scope {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
 .search-result-box {
   width: 100%;
   float: none;
@@ -5306,11 +5310,13 @@ a.badge:focus {
 .search-result-box .result-list {
   list-style: none;
 }
-.search-result-box .result-list li {
-  padding: 5px 0px;
+.search-result-box .result-list a {
+  padding: 10px 0px;
+  display: block;
   border-bottom: 1px solid #eee;
   margin-right: 25px;
-}
-.search-result-box .result-list li a {
   text-decoration: none;
+}
+.search-result-box .result-list a:hover {
+  background-color: #eee;
 }

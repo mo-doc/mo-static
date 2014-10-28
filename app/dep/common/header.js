@@ -6,8 +6,8 @@ MOapp.compileProvider.directive('moHeader', function($location) {
 	    template: require("./template/header.html"),
 	    link: function($scope,elem,attr){
 	    	$scope.search = function($event){
-	    		if(parseInt($event.keyCode) == 13){
-	    			$location.path("search/"+$scope.searchVal);
+	    		if(parseInt($event.keyCode) == 13 && $scope.searchVal){
+	    			$location.path("search/"+($scope.searchVal || ""));
 	    		}
 	    	}
 	    }
