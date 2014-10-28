@@ -19,14 +19,12 @@ module.exports = [
 	{
 		"url":"/search/:keyword",
 		"css":ENV+"static/css/search-style.css",
-		"name":"search",
-		"dep":['./app/dep/common/header']
+		"name":"search"
 	},
 	{
 		"url":"/add",
 		"css":ENV+"static/css/submit.css",
-		"name":"add",
-		"dep":['./app/dep/common/header']
+		"name":"add"
 	}
 	
 ]
