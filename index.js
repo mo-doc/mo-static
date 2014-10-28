@@ -1,9 +1,11 @@
 // 加载源框架
 require("./app/lib/angular");
 require("./app/lib/router");
+// loadcss js
 var loadCss = require("./app/util/loadcss");
+// router
 var config = require("./app/config/router");
-var ENV = window.ENV ;
+// 异步加载css缓存
 var CSS_cache = [];
 
 // 路径配置
@@ -37,7 +39,7 @@ config(['$routeProvider','$compileProvider','$filterProvider','$httpProvider', f
                         $timeout($defer.resolve,0);
                     }
                 }
-
+                // 加载过一次css不再加载
                 if(item.css&&CSS_cache.indexOf(item.css) == -1){
                     loadCss(item.css,function(){
                       CSS_cache.push(item.css)
