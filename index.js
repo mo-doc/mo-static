@@ -4,7 +4,7 @@ require("./app/lib/router");
 var loadCss = require("./app/util/loadcss");
 var config = require("./app/config/router");
 var ENV = window.ENV ;
-
+var CSS_cache = [];
 
 // 路径配置
 window.MOapp = angular.module('MOapp',['ngRoute']).
@@ -38,9 +38,14 @@ config(['$routeProvider','$compileProvider','$filterProvider','$httpProvider', f
                     }
                 }
 
-                item.css?loadCss(item.css,function(){
+                if(item.css&&CSS_cache.indexOf(item.css) == -1){
+                    loadCss(item.css,function(){
+                      CSS_cache.push(item.css)
+                      loaded();
+                    });
+                }else{
                     loaded();
-                }):loaded();
+                }
 
                 if(item.dep){
                   angular.forEach(item.dep,function(it,index){
