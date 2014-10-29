@@ -15,7 +15,7 @@ window.MODelete = function($scope,$route,$http){
 	});
 
 	$scope.remove = function(title,index){
-		var _confirm = window.confirm("确定删除?");
+		var _confirm = window.confirm("确定删除"+title+"?");
 		if(_confirm){
 			$http({
 				method:"POST",
