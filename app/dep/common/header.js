@@ -1,5 +1,5 @@
 
-MOapp.compileProvider.directive('moHeader', function($location) {
+MOapp.compileProvider.directive('moHeader', ["$location",function($location) {
 	return {
 	    restrict: 'AE',
 	    replace: true,
@@ -12,4 +12,4 @@ MOapp.compileProvider.directive('moHeader', function($location) {
 	    	}
 	    }
 	 };
-});
+}]);
