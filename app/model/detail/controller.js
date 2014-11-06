@@ -1,7 +1,7 @@
 require("../../dep/common/header");
 require("../../dep/common/nav");
 
-window.MODetail = function($scope,$route,$http){
+window.MODetail = ['$scope','$route','$http',function($scope,$route,$http){
 	// 每个controller都要加上view
 	$scope.html = require("./template.html");
 	var title = $route.current.params.name || "";
@@ -16,5 +16,5 @@ window.MODetail = function($scope,$route,$http){
 
 	});
 
-}
+}]
 

@@ -1,6 +1,6 @@
 require("../../dep/common/header");
 
-window.MOAdd = function($scope,$route,$http){
+window.MOAdd =['$scope','$route','$http',function($scope,$route,$http){
 	// 每个controller都要加上view
 	$scope.html = require("./template.html");  
 
@@ -48,5 +48,5 @@ window.MOAdd = function($scope,$route,$http){
 
 		}
 	}
-}
+}]
 

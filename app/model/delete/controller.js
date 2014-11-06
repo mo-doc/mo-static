@@ -1,7 +1,7 @@
 require("../../dep/common/header");
 
 
-window.MODelete = function($scope,$route,$http){
+window.MODelete =['$scope','$route','$http', function($scope,$route,$http){
 	// 每个controller都要加上view
 	$scope.html = require("./template.html");
 
@@ -31,5 +31,5 @@ window.MODelete = function($scope,$route,$http){
 		}
 	}
 
-}
+}]
 

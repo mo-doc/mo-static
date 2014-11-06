@@ -12,8 +12,8 @@ var CSS_cache = [];
 window.MOapp = angular.module('MOapp',['ngRoute']).
 config(['$routeProvider','$compileProvider','$filterProvider','$httpProvider', function($routeProvider,$compileProvider,$filterProvider,$httpProvider) {
 
+  // post设为表单提交
   $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
-
 
   // lazyload directive
   MOapp.compileProvider    = $compileProvider;
