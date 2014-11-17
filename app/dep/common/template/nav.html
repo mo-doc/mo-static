@@ -9,8 +9,8 @@
             <div class="accordion-inner">
                 <ul class="nav nav-list">
                     <li ng-repeat="item in group.list">
-                        <a href="#/detail/{{item.title}}">
-                        	{{item.title}}
+                        <a href="#/detail/{{item.title}}" class="nav-item">
+                        	{{item.title}}(<span ng-repeat="key in item.keywords">{{key}}</span>)
                         </a>
                     </li>
                 </ul>
