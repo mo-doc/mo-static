@@ -64,7 +64,10 @@ config(['$routeProvider','$compileProvider','$filterProvider','$httpProvider', f
     $rootScope.$on("$routeChangeStart", function(event, next, current) {
         $rootScope._loading = '<div class="loading"></div>';
     });
-});
+}).factory('message', function(){
+   // page通信
+    return {};
+});;
 
 
 // 模板解析
