@@ -5210,6 +5210,36 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+.login-box {
+  display: -webkit-flex;
+}
+.login-box .item {
+  -webkit-flex: 1;
+  margin-left: 30px;
+}
+.login-box .item:nth-child(2) {
+  width: 100px;
+  margin: 0 auto;
+  -webkit-flex: initial;
+}
+.login-box h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+.login-box .br {
+  height: 300px;
+  width: 1px;
+  margin: 0 auto;
+  background-color: #ccc;
+}
+.login-box .github-icon {
+  background: url(img/github.png);
+  width: 37px;
+  height: 29px;
+  display: inline-block;
+  background-size: 45px auto;
+  vertical-align: middle;
+}
 .header {
   padding: 15px 0px;
   margin: 0 15px;
