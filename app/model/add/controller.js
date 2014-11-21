@@ -1,11 +1,11 @@
 require("../../dep/common/header");
 
-window.MOAdd =['$scope','$route','$http',function($scope,$route,$http){
+window.MOAdd =['$scope','$route','$http','$rootScope',function($scope,$route,$http,$rootScope){
+	$rootScope._loading = false;
 	// 每个controller都要加上view
 	$scope.html = require("./template.html");  
 
 	$scope.classify="util";	
-
 	$scope.submit = function(){
 		$scope.error = "";
 		$scope.success = "";

@@ -1,6 +1,8 @@
 require("../../dep/common/header");
 
-window.MOSearch = ['$scope','$route','$http',function($scope,$route,$http){
+window.MOSearch = ['$scope','$route','$http','$rootScope',function($scope,$route,$http,$rootScope){
+
+	$rootScope._loading = false;
 	// 每个controller都要加上view
 	$scope.html = require("./template.html");
 	var keyword = $route.current.params.keyword || "";

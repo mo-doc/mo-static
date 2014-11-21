@@ -1,8 +1,9 @@
 require("../../dep/common/header");
 
 
-window.MODelete =['$scope','$route','$http', function($scope,$route,$http){
+window.MODelete =['$scope','$route','$http',"$rootScope", function($scope,$route,$http,$rootScope){
 	// 每个controller都要加上view
+	$rootScope._loading = false;
 	$scope.html = require("./template.html");
 
 	$http({

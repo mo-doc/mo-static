@@ -14,7 +14,7 @@ MOapp.compileProvider.directive('moNav', ["$http","$compile",function($http,$com
 			}).error(function(data,status,headers,config){
 				
 			});		
-
+			
 	    }
 	 };
 }]);

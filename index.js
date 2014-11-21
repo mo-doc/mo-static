@@ -32,7 +32,7 @@ config(['$routeProvider','$compileProvider','$filterProvider','$httpProvider', f
                 var $defer = $q.defer();
 
                 var requireNum = parseInt(item.count || 2 );
-
+                
                 var loaded = function(){
                     requireNum--;
                     if(!(requireNum > 0)){
@@ -49,11 +49,6 @@ config(['$routeProvider','$compileProvider','$filterProvider','$httpProvider', f
                     loaded();
                 }
 
-                // if(item.dep){
-                //   angular.forEach(item.dep,function(it,index){
-                //       require.async(it,function(){loaded});
-                //   })
-                // }
                 item.name ? require.async(item.name.indexOf("/")!=-1 ? item.page : "./app/model/"+item.name+"/controller",function(template){
                   loaded();
                 }) :loaded();
@@ -63,12 +58,17 @@ config(['$routeProvider','$compileProvider','$filterProvider','$httpProvider', f
           }
       })
   });
-}]);
+
+}]).run(function($rootScope) {
+    //loading 
+    $rootScope.$on("$routeChangeStart", function(event, next, current) {
+        $rootScope._loading = '<div class="loading"></div>';
+    });
+});
 
 
 // 模板解析
 MOapp.directive('compile', function($compile) {
-
   return function(scope, element, attrs) {
     scope.$watch(
       function(scope) {
@@ -76,15 +76,12 @@ MOapp.directive('compile', function($compile) {
         return scope.$eval(attrs.compile);
       },
       function(value) {
-
         element.html(value);
-
         $compile(element.contents())(scope);
       }
     );
   };
 });
-
 
 
 

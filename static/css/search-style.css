@@ -5282,6 +5282,13 @@ a.badge:focus {
   overflow: hidden;
   display: block;
 }
+.loading {
+  background: url(img/wait.gif) no-repeat center center #ffffff;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  z-index: 9999;
+}
 .search-result-box {
   width: 100%;
   float: none;
