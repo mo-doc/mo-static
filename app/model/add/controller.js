@@ -16,6 +16,9 @@ window.MOAdd =['$scope','$route','$http','$rootScope',function($scope,$route,$ht
 		}else if(!$scope.intro){
 			$scope.error = "介绍不能为空";
 			return ;
+		}else if(!$scope.version){
+			$scope.error = "版本号不能为空";
+			return ;
 		}else if(!$scope.keyword){
 			$scope.error = "关键字不能为空";
 			return ;
@@ -27,7 +30,9 @@ window.MOAdd =['$scope','$route','$http','$rootScope',function($scope,$route,$ht
 					title:$scope.title||"",
 					intro:$scope.intro||"",
 					classify:$scope.classify||"",
-					keywords:$scope.keyword||""
+					keywords:$scope.keyword||"",
+					version:$scope.version||"",
+					demo:$scope.demo||""
 				},
 				transformRequest: function(obj) {
 			        var str = [];

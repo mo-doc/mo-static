@@ -20,9 +20,10 @@ gulp.task('watch','',function(){
 });
 
 gulp.task('tpl2mod',function(){
-  gulp.src(path.join(__dirname, 'app/**/*.html'))
+  gulp.src(path.join(__dirname, 'app/template/**/*.html'))
       .pipe(tpl({
-        prefix: 'module.exports='
+        prefix: 'module.exports=',
+        suffix:";"
       }))
       .pipe(gulp.dest("app"));
 });

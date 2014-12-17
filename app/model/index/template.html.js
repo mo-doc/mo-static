@@ -1,1 +1,1 @@
-module.exports='<div class="header" mo-header></div><!-- content --><div class="content"><!-- 导航栏 --><div mo-nav></div></div>'
+module.exports='<div class="header" mo-header></div><!-- content --><div class="content"><!-- 导航栏 --><div mo-nav></div></div>';

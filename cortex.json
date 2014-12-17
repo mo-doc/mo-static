@@ -27,7 +27,7 @@
     "prebuild": "gulp"
   },
   "directories": {
-    "css": "static/"
+    "src": "static/"
   },
   "entries": [
     "./app/**/*.js"
