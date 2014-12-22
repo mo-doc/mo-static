@@ -9,17 +9,24 @@ window.MOAdd =['$scope','$route','$http','$rootScope',function($scope,$route,$ht
 	$scope.submit = function(){
 		$scope.error = "";
 		$scope.success = "";
+		debugger;
+		try{
+			_pkg = $scope.package ? JSON.parse($scope.package) : {};
+		}catch(e){
+			$scope.error = "解析package文件出错";
+			return ;
+		}
 
-		if(!$scope.title){
-			$scope.error = "模块名不能为空";
+		if(!_pkg.name){
+			$scope.error = "name不能为空";
 			return ;
 		}else if(!$scope.intro){
 			$scope.error = "介绍不能为空";
 			return ;
-		}else if(!$scope.version){
-			$scope.error = "版本号不能为空";
+		}else if(!_pkg.version){
+			$scope.error = "version不能为空";
 			return ;
-		}else if(!$scope.keyword){
+		}else if(!_pkg.keywords){
 			$scope.error = "关键字不能为空";
 			return ;
 		}else{
@@ -27,12 +34,8 @@ window.MOAdd =['$scope','$route','$http','$rootScope',function($scope,$route,$ht
 				method:"POST",
 				url:"/api/component/add",
 				data:{
-					title:$scope.title||"",
 					intro:$scope.intro||"",
-					classify:$scope.classify||"",
-					keywords:$scope.keyword||"",
-					version:$scope.version||"",
-					demo:$scope.demo||""
+					package:$scope.package
 				},
 				transformRequest: function(obj) {
 			        var str = [];
@@ -43,7 +46,7 @@ window.MOAdd =['$scope','$route','$http','$rootScope',function($scope,$route,$ht
 				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 			}).success(function(data,status,headers,config){
 				if(data.code == 200){
-					$scope.success = "添加"+$scope.title+"成功";
+					$scope.success = "添加"+_pkg.name+"成功";
 				}else{
 					$scope.error = data.msg || "错误";
 				}
