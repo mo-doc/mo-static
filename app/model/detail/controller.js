@@ -6,12 +6,12 @@ window.MODetail = ['$scope','$route','$http','$rootScope',function($scope,$route
 	$rootScope._loading = false;
 
 	$scope.html = require("./template.html");
-	var title = $route.current.params.name || "";
+	var name = $route.current.params.name || "";
 
 	$http({
 		method:"POST",
 		url:"/api/component/find",
-		data:"title="+title
+		data:"name="+name
 	}).success(function(data,status,headers,config){
 		$scope.data = data.length ? data[0] : {};
 	}).error(function(data,status,headers,config){

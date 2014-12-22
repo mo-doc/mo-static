@@ -15,13 +15,13 @@ window.MODelete =['$scope','$route','$http',"$rootScope", function($scope,$route
 
 	});
 
-	$scope.remove = function(title,index){
-		var _confirm = window.confirm("确定删除"+title+"?");
+	$scope.remove = function(name,index){
+		var _confirm = window.confirm("确定删除"+name+"?");
 		if(_confirm){
 			$http({
 				method:"POST",
 				url:"/api/component/remove",
-				data:"title="+title
+				data:"name="+name
 			}).success(function(data,status,headers,config){
 				if(data.code == 200){
 					$scope.data.splice(index,1);
