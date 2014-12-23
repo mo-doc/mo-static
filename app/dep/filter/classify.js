@@ -6,8 +6,8 @@ MOapp.filterProvider.register("classify", function() {
         		return "基础组件";
     		case "util":
     			return "组件";
-			case "server":
-				return "服务";
+			case "efte":
+				return "efte";
         }
     };
 });
